@@ -1,0 +1,22 @@
+server:
+  port: 8081
+
+spring:
+  #  jpa settings
+  jpa:
+    properties.hibernate.format_sql: true
+    # database: org.mariadb.jdbc.Driver
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  #  db settings
+  datasource:
+    platform: mariadb
+    #    db info sample begin
+    url: jdbc:mariadb://127.0.0.1:3306/uams
+    username: hs
+    password: qweqwe
+    #    db info sample end
+    driverClassName: org.mariadb.jdbc.Driver
+    initialization-mode: always
+    sql-script-encoding: utf-8

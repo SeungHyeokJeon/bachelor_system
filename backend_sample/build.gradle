@@ -1,0 +1,57 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation (group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.5.3')
+	implementation (group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.5.3')
+	testImplementation (group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.5.3')
+
+//	ORM
+	implementation (group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.5.3')
+	// implementation (group: 'org.postgresql', name: 'postgresql', version: '42.2.23')
+	implementation (group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '3.1.0')
+
+//	entity-dto change
+	implementation (group: 'org.mapstruct', name: 'mapstruct', version: '1.4.2.Final')
+	annotationProcessor (group: 'org.mapstruct', name: 'mapstruct-processor', version: '1.4.2.Final')
+
+//	getter/setter
+	compileOnly (group: 'org.projectlombok', name: 'lombok', version: '1.18.20')
+	annotationProcessor(
+			'org.projectlombok:lombok:1.18.20',
+			'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+	)
+
+//	querydsl
+	implementation (group: 'com.querydsl', name: 'querydsl-jpa', version: '5.0.0')
+	implementation (group: 'com.querydsl', name: 'querydsl-apt', version: '5.0.0')
+	implementation (group: 'com.querydsl', name: 'querydsl-core', version: '5.0.0')
+	annotationProcessor(
+			"javax.persistence:javax.persistence-api",
+			"javax.annotation:javax.annotation-api",
+			"com.querydsl:querydsl-apt:5.0.0:jpa")
+}
+
+test {
+	useJUnitPlatform()
+}
+
+// queryDSL이 생성하는 QClass 경로 설정
+sourceSets {
+	main {
+		java {
+			srcDirs = ["$projectDir/src/main/java", "$projectDir/build/generated"]
+		}
+	}
+}
