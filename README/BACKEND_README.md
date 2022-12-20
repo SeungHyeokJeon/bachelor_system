@@ -4,8 +4,8 @@
 
 - Spring Boot 2.5.3
 - Gradle 7.5.1
-- OpenJDK 11
-- MariaDB lastest
+- TemurinJDK 17
+- Postgresql 15
 
 ### Used Libraries
 

@@ -6,21 +6,34 @@
 ### Dev Environment
 
 - vue.js
-- spring boot 2.7.5 with openJDK11
+- spring boot 2.7.5 with temurinJDK 17
 - postgresql 15
 
 ### Requirement
 
-- Docker, docker-compose
+- Front: node
+- Back: jdk17
+- DB: Docker, docker-compose
 
 ### Execution
 
-1. create `/.env` file
+1. Edit `/.env`, `/backend/config/application.yml` file
+
+```yaml
+# /backend/config/application.yml
+server:
+  port: { yourPORT }
+
+...
+  #    db info sample begin
+  url: jdbc:postgresql://{address}:{port}/{dbname}
+  username: { your username }
+  password: { your password }
+  ...
+```
 
 ```
-FRONT_PORT = [your PORT Number]
-BACK_PORT = [your PORT Number]
-
+# ./env
 POSTGRES_HOST=localhost
 POSTGRES_PORT=[your PORT Number]
 POSTGRES_DB=uams
@@ -28,38 +41,13 @@ POSTGRES_USER=[your USERNAME]
 POSTGRES_PASSWORD=[your PASSWORD]
 ```
 
-2. synchronize db ip
-
-- check db ip
-
-```
-$ docker inspect [container_id] | grep IP
-
-...
-    "IPAddress": "172.19.0.2",
-...
-```
-
-- go to `/backend/src/main/resources/application.yml`
-
-```
-...
-  datasource:
-    platform: postgres
-    #    db info sample begin
-    url: jdbc:postgresql://[your db ip]:5432/uams
-...
-```
-
-3. load/build docker image
+3. Run Database
 
 ```bash
 docker-compose up -d
 ```
 
-- if you set the image name to `node-test`, you must rename `image` in `docker-compose.yml`
-
-4. docker-compose start / stop
+- If you set the image name to `node-test`, you must rename `image` in `docker-compose.yml`
 
 - If you run `docker-compose up -d` once, `start` and `stop` manage the container
 
@@ -68,4 +56,15 @@ docker-compose start
 docker-compose stop
 ```
 
-- If you only restart spring boot project, then run `./util/restart_back.sh`
+4. Run Backend
+
+- Go to `/commands` Folder
+
+```
+# /commands
+./back_bootrun.sh
+```
+
+5. Run Frontend
+
+- Go to `/commands` Folder

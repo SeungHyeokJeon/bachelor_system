@@ -1,3 +1,4 @@
+# backend/config/application.yml
 backend/HELP.md
 backend/.gradle
 backend/build/
@@ -41,4 +42,4 @@ backend/out/
 /frontend/node_modules/
 
 ### ENV File ###
-.env
+# .env

@@ -1,0 +1,28 @@
+server:
+  port: { your PORT }
+
+spring:
+  #  jpa settings
+  jpa:
+    properties.hibernate.format_sql: true
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  #  db settings
+  datasource:
+    platform: postgres
+    #    db info sample begin
+    url: jdbc:postgresql://{ip}:{port}/{dbname}
+    username: { your username }
+    password: { your password }
+    #    db info sample end
+    driverClassName: org.postgresql.Driver
+    initialization-mode: always
+    sql-script-encoding: utf-8
+  # server auto reload
+  devtools:
+    livereload:
+      enabled: false
+  freemaker:
+    cache: false
