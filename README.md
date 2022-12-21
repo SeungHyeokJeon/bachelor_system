@@ -67,4 +67,11 @@ docker-compose stop
 
 5. Run Frontend
 
-- Go to `/commands` Folder
+- Go to `/frontend` Folder
+
+```
+# /frontend
+npm install && npm update
+
+npm run serve
+```
