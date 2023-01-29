@@ -1,6 +1,5 @@
 server:
-  port: { your PORT }
-
+  port: 8081
 spring:
   #  jpa settings
   jpa:
@@ -13,9 +12,9 @@ spring:
   datasource:
     platform: postgres
     #    db info sample begin
-    url: jdbc:postgresql://{ip}:{port}/{dbname}
-    username: { your username }
-    password: { your password }
+    url: jdbc:postgresql://localhost:5432/uams
+    username: hs
+    password: qweqwe
     #    db info sample end
     driverClassName: org.postgresql.Driver
     initialization-mode: always
