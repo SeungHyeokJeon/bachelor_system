@@ -11,8 +11,8 @@
 
 ### Requirement
 
-- Front: node
-- Back: jdk17
+- Front: node 18
+- Back: jdk 17
 - DB: Docker, docker-compose
 
 ### Execution
@@ -71,7 +71,7 @@ docker-compose stop
 
 ```
 # /frontend
-npm install && npm update
+npm install; npm update
 
 npm run serve
 ```
