@@ -62,7 +62,8 @@ docker-compose stop
 
 ```
 # /commands
-./back_bootrun.sh
+./back_bootrun.sh   # for linux or mac
+./back_bootrun.bat  # for windows
 ```
 
 5. Run Frontend
@@ -73,5 +74,5 @@ docker-compose stop
 # /frontend
 npm install; npm update
 
-npm run serve
+npm run dev
 ```
