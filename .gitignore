@@ -39,6 +39,7 @@ backend/out/
 ### front ###
 /frontend/dist/
 /frontend/node_modules/
+/frontend/package-lock.json
 
 ### ENV File ###
 .env
