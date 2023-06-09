@@ -14,6 +14,7 @@
 - `pinia`
 - `daisyui` → css framework
   → requirements: `tailwindcss`, `postcss`, `autoprefixer`
+- `v-click-outside`
 
 ### Project Structure
 

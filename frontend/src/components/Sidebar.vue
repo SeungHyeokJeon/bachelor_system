@@ -14,6 +14,25 @@ const store = useSidebarStore();
   >
     <div class="flex-1 items-center mt-8 mb-8 px-4 h-16 border-b w-full">
       <a :href="'/'" class="normal-case text-xl font-semibold pl-4">bachelor</a>
+      <!-- mobile sidebar toggle -->
+        <button
+          class="btn btn-square btn-ghost lg:hidden"
+          @click="store.toggleSidebar"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            class="inline-block w-5 h-5 stroke-current"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
     </div>
 
     <div class="mb-4 px-4">
