@@ -1,6 +1,5 @@
 import { defineStore } from "pinia";
 import { computed, ref, Ref } from "vue";
-import "v-click-outside";
 
 export const useSidebarStore = defineStore("sideBarOpen", () => {
   
