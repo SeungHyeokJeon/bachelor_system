@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useSidebarStore } from "@/store";
+import { useSidebarStore } from "@/store/sidebar";
 
-const store = useSidebarStore();
+const sidbarStore = useSidebarStore();
 </script>
 
 <template>
@@ -10,8 +10,8 @@ const store = useSidebarStore();
     <div class="flex-none">
       <button
         class="btn btn-square btn-ghost lg:hidden"
-        :class="store.sideBarOpen ? 'hidden' : ''"
-        @click="store.toggleSidebar"
+        :class="sidbarStore.sideBarOpen ? 'hidden' : ''"
+        @click="sidbarStore.toggleSidebar"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

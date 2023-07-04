@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useSidebarStore } from "@/store";
+import { useSidebarStore } from "@/store/sidebar";
 import { vOnClickOutside } from "@vueuse/components";
 
-const store = useSidebarStore();
+const sidbarStore = useSidebarStore();
 </script>
 
 <template>
@@ -10,9 +10,9 @@ const store = useSidebarStore();
   <!-- you will need to add a little "X" button next to the logo in order to close it though -->
   <div
     class="w-1/2 md:w-1/3 lg:w-64 fixed md:top-0 md:left-0 h-screen lg:block bg-gray-100 border-r"
-    :class="store.sideBarOpen ? '' : 'hidden'"
+    :class="sidbarStore.sideBarOpen ? '' : 'hidden'"
     id="main-nav"
-    v-if="store.sideBarOpen" v-on-click-outside="store.toggleSidebar"
+    v-if="sidbarStore.sideBarOpen" v-on-click-outside="sidbarStore.toggleSidebar"
   >
     <div class="flex-1 items-center mt-8 mb-8 px-4 h-16 border-b w-full">
       <a :href="'/'" class="normal-case text-xl font-semibold pl-4">bachelor</a>

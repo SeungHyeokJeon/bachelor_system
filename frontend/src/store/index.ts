@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { computed, ref, Ref } from "vue";
 
-export const useSidebarStore = defineStore("sideBarOpen", () => {
+export const useCommonStore = defineStore("sideBarOpen", () => {
   
   const sideBarOpen: Ref<boolean> = ref(false);
 
