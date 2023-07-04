@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useSidebarStore } from "@/store";
+import { vOnClickOutside } from "@vueuse/components";
 
 const store = useSidebarStore();
 </script>
@@ -11,11 +12,12 @@ const store = useSidebarStore();
     class="w-1/2 md:w-1/3 lg:w-64 fixed md:top-0 md:left-0 h-screen lg:block bg-gray-100 border-r"
     :class="store.sideBarOpen ? '' : 'hidden'"
     id="main-nav"
+    v-if="store.sideBarOpen" v-on-click-outside="store.toggleSidebar"
   >
     <div class="flex-1 items-center mt-8 mb-8 px-4 h-16 border-b w-full">
       <a :href="'/'" class="normal-case text-xl font-semibold pl-4">bachelor</a>
       <!-- mobile sidebar toggle -->
-        <button
+        <!-- <button
           class="btn btn-square btn-ghost lg:hidden"
           @click="store.toggleSidebar"
         >
@@ -32,7 +34,7 @@ const store = useSidebarStore();
               d="M4 6h16M4 12h16M4 18h16"
             ></path>
           </svg>
-        </button>
+        </button> -->
     </div>
 
     <div class="mb-4 px-4">

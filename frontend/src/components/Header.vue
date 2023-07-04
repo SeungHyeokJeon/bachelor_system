@@ -10,6 +10,7 @@ const store = useSidebarStore();
     <div class="flex-none">
       <button
         class="btn btn-square btn-ghost lg:hidden"
+        :class="store.sideBarOpen ? 'hidden' : ''"
         @click="store.toggleSidebar"
       >
         <svg
